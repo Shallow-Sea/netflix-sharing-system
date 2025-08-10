@@ -41,9 +41,7 @@ COPY nginx.conf /etc/nginx/conf.d/
 # 复制构建产物
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# 创建非root用户
-RUN addgroup -g 1001 -S nginx && \
-    adduser -S nginx -u 1001 -G nginx
+# nginx镜像已有nginx用户，直接设置权限即可
 
 # 设置权限
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
