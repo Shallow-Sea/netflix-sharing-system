@@ -13,7 +13,7 @@ yarn.lock
 .env.development.local
 .env.test.local
 .env.production.local
-.env.docker
+# 保留 .env.docker 作为模板文件
 
 # 密钥和证书
 .secret_keys
