@@ -37,7 +37,7 @@ services:
       API_URL: ${API_URL:-https://catapi.dmid.cc}
       CORS_ORIGINS: ${CORS_ORIGINS:-https://catnf.dmid.cc}
     ports:
-      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:3001:3000"
     volumes:
       - api_logs:/app/logs
     networks:
@@ -61,7 +61,7 @@ services:
     container_name: netflix-frontend
     restart: unless-stopped
     ports:
-      - "127.0.0.1:8080:80"
+      - "127.0.0.1:8081:80"
     networks:
       - netflix-network
     depends_on:
@@ -78,8 +78,8 @@ services:
     container_name: netflix-nginx
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - "8082:80"
+      - "8443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
