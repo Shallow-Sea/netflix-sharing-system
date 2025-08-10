@@ -10,11 +10,11 @@ COPY package*.json ./
 # 设置Node.js环境变量以支持旧版OpenSSL
 ENV NODE_OPTIONS=--openssl-legacy-provider
 
-# 更新npm到最新版本以支持lockfileVersion 3
-RUN npm install -g npm@latest
+# 删除package-lock.json以避免版本冲突，使用npm install重新生成
+RUN rm -f package-lock.json
 
-# 安装依赖
-RUN npm install --only=production --ignore-scripts
+# 安装依赖 - 不使用--only=production以避免dev依赖问题
+RUN npm install --ignore-scripts
 
 # 复制源代码
 COPY . .
