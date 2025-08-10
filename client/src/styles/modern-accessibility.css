@@ -1,0 +1,147 @@
+/* 现代无障碍样式 - 替换弃用的-ms-high-contrast属性 */
+
+/* 使用新的forced-colors媒体查询替代-ms-high-contrast */
+@media (forced-colors: active) {
+  /* 为强制颜色模式（如高对比度）优化的样式 */
+  
+  .ant-btn {
+    border: 2px solid ButtonText !important;
+  }
+  
+  .ant-btn-primary {
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+    border-color: ButtonText !important;
+  }
+  
+  .ant-btn:hover {
+    background-color: Highlight !important;
+    color: HighlightText !important;
+    border-color: HighlightText !important;
+  }
+  
+  .ant-table {
+    border: 1px solid ButtonText !important;
+  }
+  
+  .ant-table-thead > tr > th {
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+    border-color: ButtonText !important;
+  }
+  
+  .ant-table-tbody > tr > td {
+    border-color: ButtonText !important;
+    color: ButtonText !important;
+  }
+  
+  .ant-table-tbody > tr:hover > td {
+    background-color: Highlight !important;
+    color: HighlightText !important;
+  }
+  
+  .ant-form-item-label > label {
+    color: ButtonText !important;
+  }
+  
+  .ant-input {
+    background-color: Field !important;
+    color: FieldText !important;
+    border-color: ButtonText !important;
+  }
+  
+  .ant-select-selector {
+    background-color: Field !important;
+    color: FieldText !important;
+    border-color: ButtonText !important;
+  }
+  
+  .ant-modal {
+    background-color: Canvas !important;
+    color: CanvasText !important;
+    border: 2px solid ButtonText !important;
+  }
+  
+  .ant-modal-header {
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+    border-bottom: 1px solid ButtonText !important;
+  }
+  
+  .ant-menu {
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+  }
+  
+  .ant-menu-item {
+    color: ButtonText !important;
+  }
+  
+  .ant-menu-item:hover {
+    background-color: Highlight !important;
+    color: HighlightText !important;
+  }
+  
+  .ant-menu-item-selected {
+    background-color: Highlight !important;
+    color: HighlightText !important;
+  }
+}
+
+/* 确保在常规模式下的基本样式保持不变 */
+@media (forced-colors: none) {
+  /* 正常模式下的样式已由Ant Design处理 */
+}
+
+/* 为所有主要组件添加基本的forced-colors支持 */
+@media (forced-colors: active) {
+  /* 链接 */
+  a {
+    color: LinkText !important;
+  }
+  
+  a:visited {
+    color: VisitedText !important;
+  }
+  
+  /* 禁用状态 */
+  .ant-btn-disabled,
+  .ant-input-disabled,
+  .ant-select-disabled {
+    color: GrayText !important;
+    background-color: ButtonFace !important;
+    border-color: GrayText !important;
+  }
+  
+  /* 焦点状态 */
+  .ant-btn:focus,
+  .ant-input:focus,
+  .ant-select:focus {
+    outline: 2px solid Highlight !important;
+    outline-offset: 2px !important;
+  }
+  
+  /* 标签和徽章 */
+  .ant-tag {
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+    border: 1px solid ButtonText !important;
+  }
+  
+  /* 通知和警告 */
+  .ant-message,
+  .ant-notification {
+    background-color: Canvas !important;
+    color: CanvasText !important;
+    border: 2px solid ButtonText !important;
+  }
+  
+  /* 面包屑 */
+  .ant-breadcrumb {
+    color: ButtonText !important;
+  }
+  
+  .ant-breadcrumb-separator {
+    color: ButtonText !important;
+  }
+}

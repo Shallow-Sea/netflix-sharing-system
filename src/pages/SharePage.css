@@ -1,0 +1,409 @@
+/* 全局样式 */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5;
+}
+
+/* 分享页布局 */
+.share-page-layout {
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.share-page-content {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.share-page-container {
+  width: 100%;
+}
+
+.share-page-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* 页面头部 */
+.share-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #fff;
+}
+
+.share-page-title {
+  font-size: 20px;
+  margin: 0;
+  color: #1890ff;
+  font-weight: bold;
+}
+
+.share-page-invite {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.share-page-invite button {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+
+/* 信息区域 */
+.share-page-info {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.share-page-info h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.share-page-notice {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* 账号信息区域 */
+.share-page-account {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+}
+
+.share-page-account-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.share-page-account-item:last-child {
+  margin-bottom: 0;
+}
+
+.share-page-account-label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #333;
+  width: 60px;
+}
+
+.share-page-account-value {
+  font-family: monospace;
+  font-size: 16px;
+  margin-right: 10px;
+  letter-spacing: 1px;
+  color: #1890ff;
+  flex: 1;
+  word-break: break-all;
+}
+
+.share-page-account-btn {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.share-page-account-btn:hover {
+  background-color: #40a9ff;
+}
+
+.share-page-profile {
+  display: flex;
+  align-items: center;
+}
+
+.share-page-profile .profile-position {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ff4d4f;
+  margin: 0 5px;
+}
+
+/* 操作按钮区域 */
+.share-page-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.share-page-action-btn {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  background-color: #1890ff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.share-page-action-btn:hover {
+  background-color: #40a9ff;
+}
+
+/* 时间信息区域 */
+.share-page-time {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.time-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+}
+
+.time-label {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.time-value {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+/* 车票信息 */
+.share-page-ticket {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.ticket-code {
+  color: #888;
+  font-weight: normal;
+}
+
+/* 常见问题按钮 */
+.share-page-faq-btn {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.share-page-faq-btn button {
+  background-color: #1890ff;
+  border-color: #1890ff;
+  font-weight: 500;
+}
+
+/* 提示信息 */
+.share-page-tips {
+  text-align: center;
+  color: #888;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* FAQ区域 */
+.share-page-faq {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+  background-color: #fff;
+}
+
+.faq-content {
+  padding: 10px 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.faq-content p {
+  margin-bottom: 10px;
+}
+
+/* 加载和错误状态 */
+.share-page-loading,
+.share-page-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.share-page-error {
+  color: #ff4d4f;
+}
+
+/* 模态框样式 */
+.code-modal-content {
+  text-align: center;
+}
+
+.verify-code {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 20px 0;
+  letter-spacing: 2px;
+  color: #1890ff;
+}
+
+.update-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #52c41a;
+}
+
+/* 激活页面 */
+.activate-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activate-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.activate-description {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.activate-button {
+  background-color: #1890ff;
+  border-color: #1890ff;
+  height: 40px;
+  font-size: 16px;
+}
+
+/* 密码保护页面 */
+.password-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.password-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.password-form {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* PIN码显示 */
+.pin-container {
+  background-color: #fff8e1;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #ffe58f;
+}
+
+.pin-title {
+  font-weight: bold;
+  color: #fa8c16;
+  margin-bottom: 5px;
+}
+
+.pin-value {
+  font-family: monospace;
+  font-size: 16px;
+  color: #fa8c16;
+}
+
+/* 公告弹窗 */
+.announcement-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.announcement-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.announcement-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.announcement-countdown {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* 响应式调整 */
+@media (max-width: 576px) {
+  .share-page-actions {
+    flex-direction: column;
+  }
+  
+  .share-page-action-btn {
+    margin: 5px 0;
+  }
+  
+  .share-page-content {
+    padding: 10px;
+  }
+  
+  .share-page-account-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .share-page-account-label {
+    margin-bottom: 5px;
+    width: auto;
+  }
+  
+  .share-page-account-value {
+    margin-bottom: 5px;
+  }
+} 
