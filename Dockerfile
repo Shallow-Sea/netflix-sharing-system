@@ -19,8 +19,11 @@ ENV TZ=Asia/Shanghai
 # 复制package文件
 COPY package*.json ./
 
+# 删除package-lock.json以避免版本冲突
+RUN rm -f package-lock.json
+
 # 安装依赖
-RUN npm ci --only=production && \
+RUN npm install --only=production && \
     npm cache clean --force
 
 # 复制源代码 (排除前端文件)
