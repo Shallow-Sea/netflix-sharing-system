@@ -1,0 +1,26 @@
+# =================================
+# Docker部署环境变量配置
+# =================================
+
+# 数据库配置
+MONGO_ROOT_USERNAME=admin
+MONGO_ROOT_PASSWORD=your_mongodb_password_here
+MONGO_DATABASE=netflix_sharing_db
+
+# API服务配置 - 请替换为强密钥
+JWT_SECRET=your_jwt_secret_64_chars_here
+JWT_EXPIRES_IN=24h
+DATA_ENCRYPTION_KEY=your_data_encryption_key_64_chars_here
+API_ENCRYPTION_KEY=your_api_encryption_key_64_chars_here
+
+# 安全配置
+ALLOW_ADMIN_REGISTRATION=false
+
+# 域名配置
+FRONTEND_URL=https://catnf.dmid.cc
+API_URL=https://catapi.dmid.cc
+CORS_ORIGINS=https://catnf.dmid.cc
+REACT_APP_API_BASE_URL=https://catapi.dmid.cc/api
+
+# 生成密钥命令:
+# docker run --rm node:18-alpine node -e "console.log(require(crypto).randomBytes(32).toString(hex))"

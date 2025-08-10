@@ -7,8 +7,11 @@ WORKDIR /app
 # 复制package文件
 COPY package*.json ./
 
+# 设置Node.js环境变量以支持旧版OpenSSL
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
 # 安装依赖
-RUN npm ci
+RUN npm ci --only=production --ignore-scripts
 
 # 复制源代码
 COPY . .
