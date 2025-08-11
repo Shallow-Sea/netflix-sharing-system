@@ -10,7 +10,13 @@
       "Bash(git remote set-url:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(timeout 30 git push origin main)"
+      "Bash(timeout 30 git push origin main)",
+      "Bash(ping:*)",
+      "Bash(docker:*)",
+      "Bash(npm install)",
+      "Bash(npm audit:*)",
+      "Bash(node:*)",
+      "Bash(curl:*)"
     ],
     "deny": []
   }

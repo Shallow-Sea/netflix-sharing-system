@@ -1,0 +1,65 @@
+name: netflix-sharing-system
+services:
+  # MongoDB数据库
+  mongodb:
+    image: mongo:6-focal
+    container_name: netflix-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_DATABASE: netflix_sharing_db
+    ports:
+      - "127.0.0.1:27018:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./scripts/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    networks:
+      - netflix-network
+    command: mongod --auth
+
+  # 后端API服务
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: netflix-api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      MONGODB_URI: mongodb://admin:admin123@mongodb:27017/netflix_sharing_db?authSource=admin
+      JWT_SECRET: e06c1df9aa56dd209641723f73ecb2755226a459921ce5f62d72495f2666ed6f
+      JWT_EXPIRES_IN: 24h
+      DATA_ENCRYPTION_KEY: 6075a70eac01a62dc6c60b15e7fa360a7e0f03d603ede0f6eb28e1e42f5166b8
+      API_ENCRYPTION_KEY: 4a3ae8447add0e002f9fc2131d3fdae234f1e3ff3c3cdf79491dc72b996f4ca4
+      ALLOW_ADMIN_REGISTRATION: false
+      FRONTEND_URL: http://localhost:8081
+      API_URL: http://localhost:3001
+      CORS_ORIGINS: http://localhost:8081
+    ports:
+      - "127.0.0.1:3001:3000"
+    volumes:
+      - api_logs:/app/logs
+    networks:
+      - netflix-network
+    depends_on:
+      - mongodb
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+# 网络配置
+networks:
+  netflix-network:
+    driver: bridge
+
+# 数据卷
+volumes:
+  mongodb_data:
+    driver: local
+  api_logs:
+    driver: local
